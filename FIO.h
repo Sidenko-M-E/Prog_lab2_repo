@@ -1,12 +1,13 @@
+#define FIO_fields_size 30
+
 struct FIO {
-	char SurName[30];
-	char Name[30];
-	char Patronymic[30];
+	char SurName[FIO_fields_size];
+	char Name[FIO_fields_size];
+	char Patronymic[FIO_fields_size];
 
-	void SetSurName(*(char[30]) buf);
-	void SetName(*(char[30]) buf);
-	void SetPatronymic(*(char[30]) buf);
+	void SetSurName(char buf[]);
+	void SetName(char buf[]);
+	void SetPatronymic(char buf[]);
 
-	*(char[30]) GetSurName();
-
+	void PrintFio();
 };
