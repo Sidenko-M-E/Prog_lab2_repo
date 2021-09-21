@@ -1,5 +1,6 @@
-//#ifndef FIO_H
-//#define FIO_H
+#ifndef FIO_H
+#define FIO_H
+
 #define FIO_fields_size 30
 
 struct FIO {
@@ -14,4 +15,4 @@ struct FIO {
 	void PrintFio();
 };
 
-//#endif FIO_H
+#endif FIO_H

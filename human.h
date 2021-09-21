@@ -1,5 +1,8 @@
 #include "FIO.cpp"
 
+#ifndef HUMAN_H
+#define HUMAN_H
+
 struct human {
 	int id;
 	int age;
@@ -16,3 +19,6 @@ struct human {
 
 	void PrintHuman();
 };
+
+#endif HUMAN_H// !HUMAN_H
+

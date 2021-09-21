@@ -1,6 +1,9 @@
 #include "FIO.h"
 #include "stdio.h"
 
+#ifndef FIO_CPP
+#define FIO_CPP
+
 void FIO::SetSurName(char buf[])
 {
 	for (int i = 0; i < FIO_fields_size; i++)
@@ -23,3 +26,6 @@ void FIO::PrintFio()
 {
 	printf("FIO: %s %s %s\n", SurName, Name, Patronymic);
 }
+
+#endif // !FIO_CPP
+

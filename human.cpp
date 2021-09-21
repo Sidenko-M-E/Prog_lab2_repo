@@ -1,11 +1,14 @@
 #include "human.h"
 
+#ifndef HUMAN_CPP
+#define HUMAN_CPP
+
 void human::SetId(int buf) { id = buf; }
 void human::SetAge(int buf) { age = buf; }
 void human::SetWeight(float buf) { weight = buf; }
 void human::SetHeight(float buf) { height = buf; }
 void human::SetGender(char buf) { gender = buf; }
-void human::PrintHuman() 
+void human::PrintHuman()
 {
 	printf("id: %d\n", id);
 	printf("age: %d\n", age);
@@ -14,3 +17,6 @@ void human::PrintHuman()
 	printf("gender: %c\n", gender);
 	FIO.PrintFio();
 }
+
+#endif // !HUMAN_CPP
+

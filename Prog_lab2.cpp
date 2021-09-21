@@ -38,4 +38,14 @@ int main()
 	Me2.SetGroup(Group);
 	Me2.SetFaculty(Faculty);
 	Me2.PrintStudent();
+
+	//teacher struct
+	printf("\n teacher struct \n");
+	teacher Me3;
+	Me3.human = Me;
+	Me3.SetWorkExp(20);
+	char Degree[] = "Candidate of Science";
+	Me3.SetDegree(Degree);
+	Me3.SetFaculty(Faculty);
+	Me3.PrintTeacher();
 }
