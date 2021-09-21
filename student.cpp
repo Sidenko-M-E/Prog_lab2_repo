@@ -18,10 +18,10 @@ void student::SetGroup(char buf[])
 }
 
 //Метод установки факультета
-void student::SetFaculty(char buf[])
+void student::SetFacultyName(char buf[])
 {
 	for (int i = 0; i < FIO_fields_size; i++)
-		Faculty[i] = buf[i];
+		FacultyName[i] = buf[i];
 }
 
 //Метод распечатки структуры
@@ -29,7 +29,7 @@ void student::PrintStudent()
 {
 	human.PrintHuman();
 	printf("course: %d\n", course);
-	printf("Direction Of Preparation: %s\n", DirOfPrep);
+	printf("direction of preparation: %s\n", DirOfPrep);
 	printf("group: %s\n", Group);
-	printf("faculty: %s\n", Faculty);
+	printf("faculty name: %s\n", FacultyName);
 }

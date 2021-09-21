@@ -1,10 +1,11 @@
 ﻿#include "student.cpp"
 #include "teacher.cpp"
+#include "faculty.cpp"
 
 int main()
 {
 	//FIO struct
-	printf("\n FIO struct \n");
+	printf("\n--------FIO struct--------\n");
 	FIO MyName;
 	char Familia[] = "Sidenko";
 	char Imya[] = "Matvey";
@@ -16,7 +17,7 @@ int main()
 	MyName.PrintFio();
 
 	//human struct
-	printf("\n human struct \n");
+	printf("\n--------human struct--------\n");
 	human Me;
 	Me.SetId(1234);
 	Me.SetAge(19);
@@ -27,25 +28,35 @@ int main()
 	Me.PrintHuman();
 
 	//student struct
-	printf("\n student struct \n");
+	printf("\n--------student struct--------\n");
 	student Me2;
 	char DirOfPrep[] = "Bachelor";
 	char Group[] = "PI-03";
-	char Faculty[] = "FoIT";
+	char FacultyName[] = "FoIT";
 	Me2.human = Me;
 	Me2.SetCourse(3);
 	Me2.SetDirOfPrep(DirOfPrep);
 	Me2.SetGroup(Group);
-	Me2.SetFaculty(Faculty);
+	Me2.SetFacultyName(FacultyName);
 	Me2.PrintStudent();
 
 	//teacher struct
-	printf("\n teacher struct \n");
+	printf("\n--------teacher struct--------\n");
 	teacher Me3;
 	Me3.human = Me;
 	Me3.SetWorkExp(20);
 	char Degree[] = "Candidate of Science";
 	Me3.SetDegree(Degree);
-	Me3.SetFaculty(Faculty);
+	Me3.SetFacultyName(FacultyName);
 	Me3.PrintTeacher();
+
+	//faculty struct
+	printf("\n--------faculty struct------------\n");
+	Faculty Fac;
+	Fac.SetFacultyName(FacultyName);
+	Fac.SetQuantityOfStudents(300);
+	Fac.SetQuantityOfTeachers(25);
+	Fac.SetQuantityOfDisciplines(40);
+	Fac.PrintFaculty();
 }
+
