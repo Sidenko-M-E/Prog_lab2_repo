@@ -21,5 +21,5 @@ void FIO::SetPatronymic(char buf[])
 
 void FIO::PrintFio()
 {
-	printf("FIO: %s %s %s", SurName, Name, Patronymic);
+	printf("FIO: %s %s %s\n", SurName, Name, Patronymic);
 }
