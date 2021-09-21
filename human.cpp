@@ -1,13 +1,17 @@
 #include "human.h"
 
+//«ащита от переопределени€ методов структуры
 #ifndef HUMAN_CPP
 #define HUMAN_CPP
 
-void human::SetId(int buf) { id = buf; }
-void human::SetAge(int buf) { age = buf; }
-void human::SetWeight(float buf) { weight = buf; }
-void human::SetHeight(float buf) { height = buf; }
-void human::SetGender(char buf) { gender = buf; }
+//ћетоды установки... 
+void human::SetId(int buf) { id = buf; }	//id
+void human::SetAge(int buf) { age = buf; }	//возраста
+void human::SetWeight(float buf) { weight = buf; }	//веса
+void human::SetHeight(float buf) { height = buf; }	//роста
+void human::SetGender(char buf) { gender = buf; }	//пола
+
+//ћетод распечатки структуры
 void human::PrintHuman()
 {
 	printf("id: %d\n", id);
@@ -18,5 +22,5 @@ void human::PrintHuman()
 	FIO.PrintFio();
 }
 
-#endif // !HUMAN_CPP
+#endif HUMAN_CPP
 

@@ -6,9 +6,11 @@ struct teacher {
 	char Degree[FIO_fields_size];	//ученая степень
 	char Faculty[FIO_fields_size];	//название факультета
 
-	void SetWorkExp(int buf);
-	void SetDegree(char buf[]);
-	void SetFaculty(char buf[]);
+	//Методы установки...
+	void SetWorkExp(int buf);	//рабочего стажа
+	void SetDegree(char buf[]);	//ученой степени
+	void SetFaculty(char buf[]);//факультета
 
+	//Метод распечатки структуры
 	void PrintTeacher();
 };
