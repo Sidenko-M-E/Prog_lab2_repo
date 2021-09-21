@@ -1,5 +1,4 @@
 #include "human.h"
-#include "stdio.h"
 
 void human::SetId(int buf) { id = buf; }
 void human::SetAge(int buf) { age = buf; }

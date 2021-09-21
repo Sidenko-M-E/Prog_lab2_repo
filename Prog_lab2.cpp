@@ -1,8 +1,9 @@
-﻿#include "human.cpp"
+﻿#include "student.cpp"
 
 int main()
 {
 	//FIO struct
+	printf("\n FIO struct \n");
 	FIO MyName;
 	char Familia[] = "Sidenko";
 	char Imya[] = "Matvey";
@@ -14,6 +15,7 @@ int main()
 	MyName.PrintFio();
 
 	//human struct
+	printf("\n human struct \n");
 	human Me;
 	Me.SetId(1234);
 	Me.SetAge(19);
@@ -21,6 +23,18 @@ int main()
 	Me.SetHeight(182);
 	Me.SetGender('M');
 	Me.FIO = MyName;
-
 	Me.PrintHuman();
+
+	//student struct
+	printf("\n student struct \n");
+	student Me2;
+	char DirOfPrep[] = "Bachelor";
+	char Group[] = "PI-03";
+	char Faculty[] = "FoIT";
+	Me2.human = Me;
+	Me2.SetCourse(3);
+	Me2.SetDirOfPrep(DirOfPrep);
+	Me2.SetGroup(Group);
+	Me2.SetFaculty(Faculty);
+	Me2.PrintStudent();
 }
