@@ -4,7 +4,7 @@ void student::SetCourse(int buf){course = buf;}
 
 void student::SetDirOfPrep(char buf[])
 {
-	for (int i = 0; i < FIO_fields_size / 2; i++)
+	for (int i = 0; i < (FIO_fields_size / 3 * 2); i++)
 		DirOfPrep[i] = buf[i];
 }
 
