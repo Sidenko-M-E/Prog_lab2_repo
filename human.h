@@ -19,6 +19,9 @@ struct human {
 	void SetHeight(float buf);	//роста
 	void SetGender(char buf);	//пола
 
+	//Метод установки id, возраста, веса, роста
+	void SetAllNumeric(int buf_id, int buf_age, float buf_weight, float buf_height);
+
 	//Метод распечатки структуры
 	void PrintHuman();
 };

@@ -11,6 +11,9 @@ struct Faculty
 	void SetQuantityOfTeachers(int buf);	//кол-ва преподавателей
 	void SetQuantityOfDisciplines(int buf); //кол-ва преподаваемых дисциплин
 
+	//Метод установки кол-ва студентов, преподавателей, и дисциплин на факультете
+	void SetAllQuantities(int buf_stu, int buf_tea, int buf_dis);
+
 	//Метод распечатки структуры
 	void PrintFaculty();
 };

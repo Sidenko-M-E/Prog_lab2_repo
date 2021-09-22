@@ -30,12 +30,12 @@ int main()
 	//student struct
 	printf("\n--------student struct--------\n");
 	student Me2;
-	char DirOfPrep[] = "Bachelor";
+	char EduProg[] = "Bachelor";
 	char Group[] = "PI-03";
 	char FacultyName[] = "FoIT";
 	Me2.human = Me;
 	Me2.SetCourse(3);
-	Me2.SetDirOfPrep(DirOfPrep);
+	Me2.SetEduProg(EduProg);
 	Me2.SetGroup(Group);
 	Me2.SetFacultyName(FacultyName);
 	Me2.PrintStudent();

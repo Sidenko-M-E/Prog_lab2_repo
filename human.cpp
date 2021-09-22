@@ -11,6 +11,15 @@ void human::SetWeight(float buf) { weight = buf; }	//веса
 void human::SetHeight(float buf) { height = buf; }	//роста
 void human::SetGender(char buf) { gender = buf; }	//пола
 
+//Метод установки id, возраста, веса, роста
+void human::SetAllNumeric(int buf_id, int buf_age, float buf_weight, float buf_height)
+{
+	id = buf_id;
+	age = buf_age;
+	weight = buf_weight;
+	height = buf_height;
+}
+
 //Метод распечатки структуры
 void human::PrintHuman()
 {

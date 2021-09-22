@@ -3,11 +3,11 @@
 //Метод установки курса
 void student::SetCourse(int buf){course = buf;}
 
-//Метод установки направления подготовки
-void student::SetDirOfPrep(char buf[])
+//Метод установки учебной программы
+void student::SetEduProg(char buf[])
 {
 	for (int i = 0; i < (FIO_fields_size / 3 * 2); i++)
-		DirOfPrep[i] = buf[i];
+		EduProg[i] = buf[i];
 }
 
 //Метод установки группы
@@ -29,7 +29,7 @@ void student::PrintStudent()
 {
 	human.PrintHuman();
 	printf("course: %d\n", course);
-	printf("direction of preparation: %s\n", DirOfPrep);
+	printf("direction of preparation: %s\n", EduProg);
 	printf("group: %s\n", Group);
 	printf("faculty name: %s\n", FacultyName);
 }

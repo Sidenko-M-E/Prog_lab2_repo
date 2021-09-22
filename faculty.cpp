@@ -13,6 +13,14 @@ void Faculty::SetQuantityOfStudents(int buf) { QuantityOfStudents = buf; }	//кол
 void Faculty::SetQuantityOfTeachers(int buf) { QuantityOfTeachers = buf; }	//кол-ва преподавателей
 void Faculty::SetQuantityOfDisciplines(int buf) { QuantityOfDisciplines = buf; } //кол-ва преподаваемых дисциплин
 
+//Метод установки кол-ва студентов, преподавателей, и дисциплин на факультете
+void Faculty::SetAllQuantities(int buf_stu, int buf_tea, int buf_dis)
+{
+	QuantityOfStudents = buf_stu;
+	QuantityOfTeachers = buf_tea;
+	QuantityOfDisciplines = buf_dis;
+}
+
 //Метод распечатки структуры
 void Faculty::PrintFaculty()
 {
