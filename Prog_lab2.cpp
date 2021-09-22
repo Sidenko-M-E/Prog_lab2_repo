@@ -45,7 +45,7 @@ int main()
 	teacher Me3;
 	Me3.human = Me;
 	Me3.SetWorkExp(20);
-	char Degree[] = "Candidate of Science";
+	char Degree[] = "Candidate of Mathematical Sciences";
 	Me3.SetDegree(Degree);
 	Me3.SetFacultyName(FacultyName);
 	Me3.PrintTeacher();

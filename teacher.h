@@ -3,8 +3,8 @@
 struct teacher {
 	human human; //подструктура "human"
 	int WorkExp;  //рабочий стаж
-	char Degree[FIO_fields_size];	//учена€ степень
-	char FacultyName[FIO_fields_size];	//название факультета
+	char Degree[40];	//учена€ степень
+	char FacultyName[30];	//название факультета
 
 	//ћетоды установки...
 	void SetWorkExp(int buf);	//рабочего стажа
