@@ -10,15 +10,29 @@ void Faculty::SetFacultyName(char buf[])
 
 //Методы установки...
 void Faculty::SetQuantityOfStudents(int buf) { QuantityOfStudents = buf; }	//кол-ва студетов на факультете
-void Faculty::SetQuantityOfTeachers(int buf) { QuantityOfTeachers = buf; }	//кол-ва преподавателей
+void Faculty::SetQuantityOfBachelors(int buf) { QuantityOfBachelors = buf; } //кол-ва обучающихся на бакалавриате
+void Faculty::SetQuantityOfMasters(int buf) { QuantityOfMasters = buf; }//кол-ва обучающихся в магистратуре
+
+void Faculty::SetQuantityOfTeachers(int buf) { QuantityOfTeachers = buf; }//кол-ва преподавателей
+void Faculty::SetQuantityOfCandidates(int buf) { QuantityOfCandidates = buf; }//кол-ва кандидатов наук
+void Faculty::SetQuantityOfDoctors(int buf) { QuantityOfDoctors = buf; }//кол-ва докторов наук
+
 void Faculty::SetQuantityOfDisciplines(int buf) { QuantityOfDisciplines = buf; } //кол-ва преподаваемых дисциплин
 
-//Метод установки кол-ва студентов, преподавателей, и дисциплин на факультете
-void Faculty::SetAllQuantities(int buf_stu, int buf_tea, int buf_dis)
+//Метод установки информации о студентах
+void Faculty::SetStudentsInfo(int all_quan, int bach_quan, int mast_quan)
 {
-	QuantityOfStudents = buf_stu;
-	QuantityOfTeachers = buf_tea;
-	QuantityOfDisciplines = buf_dis;
+	QuantityOfStudents = all_quan;
+	QuantityOfBachelors = bach_quan;
+	QuantityOfMasters = mast_quan;
+}
+
+//Метод установки информации о преподавателях
+void Faculty::SetTeachersInfo(int all_quan, int cand_quan, int doct_quan)
+{
+	QuantityOfTeachers = all_quan;
+	QuantityOfCandidates = cand_quan;
+	QuantityOfDoctors = doct_quan;
 }
 
 //Метод распечатки структуры
@@ -26,6 +40,12 @@ void Faculty::PrintFaculty()
 {
 	printf("faculty name: %s\n", FacultyName);
 	printf("quantity of students: %d\n", QuantityOfStudents);
+	printf("quantity of bachelors: %d\n", QuantityOfBachelors);
+	printf("quantity of masters: %d\n\n", QuantityOfMasters);
+
 	printf("quantity of teachers: %d\n", QuantityOfTeachers);
+	printf("quantity of candidates: %d\n", QuantityOfCandidates);
+	printf("quantity of doctors: %d\n\n", QuantityOfDoctors);
+
 	printf("quantity of disciplines: %d\n", QuantityOfDisciplines);
 }

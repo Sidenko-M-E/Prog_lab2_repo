@@ -18,6 +18,7 @@ int main()
 
 	//human struct
 	printf("\n--------human struct--------\n");
+	printf("------separate filling------\n");
 	human Me;
 	Me.SetId(1234);
 	Me.SetAge(19);
@@ -25,6 +26,9 @@ int main()
 	Me.SetHeight(182);
 	Me.SetGender('M');
 	Me.FIO = MyName;
+	Me.PrintHuman();
+	printf("--------joint filling-------\n");
+	Me.SetAllNumeric(1340, 20, 80, 192);
 	Me.PrintHuman();
 
 	//student struct
@@ -52,11 +56,25 @@ int main()
 
 	//faculty struct
 	printf("\n--------faculty struct------------\n");
+	printf("------separate filling------\n");
 	Faculty Fac;
+
 	Fac.SetFacultyName(FacultyName);
-	Fac.SetQuantityOfStudents(300);
-	Fac.SetQuantityOfTeachers(25);
+	Fac.SetQuantityOfStudents(500);
+	Fac.SetQuantityOfBachelors(450);
+	Fac.SetQuantityOfMasters(50);
+
+	Fac.SetQuantityOfTeachers(50);
+	Fac.SetQuantityOfCandidates(40);
+	Fac.SetQuantityOfDoctors(5);
+
 	Fac.SetQuantityOfDisciplines(40);
+
+	Fac.PrintFaculty();
+
+	printf("--------joint filling-------\n");
+	Fac.SetStudentsInfo(600, 550, 50);
+	Fac.SetTeachersInfo(60, 45, 7);
 	Fac.PrintFaculty();
 }
 
