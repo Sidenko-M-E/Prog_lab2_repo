@@ -27,6 +27,7 @@ int main()
 	my_FIO.SetPatronymic(Otchestvo);
 	PrintFio(my_FIO);
 
+
 	
 	///human struct
 	printf("\n--------human struct--------\n");
@@ -41,6 +42,7 @@ int main()
 	printf("\n");
 	PrintHuman(me);
 	
+
 
 	///student struct
 	printf("\n--------student struct--------\n");
@@ -67,6 +69,7 @@ int main()
 	PrintStudent(my_student);
 
 
+
 	///teacher struct
 	printf("\n--------teacher struct--------\n");
 	char Degree[] = "Candidate of Mathematical Sciences";
@@ -87,6 +90,8 @@ int main()
 	my_teacher.SetDegree(Degree);
 	my_teacher.SetFacultyName(FacultyName);
 	PrintTeacher(my_teacher);
+
+
 
 	///faculty struct
 	printf("\n------faculty struct----------\n");
