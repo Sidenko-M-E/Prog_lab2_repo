@@ -1,6 +1,6 @@
 ﻿#include "student.cpp"
 #include "teacher.cpp"
-//#include "faculty.cpp"
+#include "faculty.cpp"
 
 int main()
 {
@@ -21,7 +21,7 @@ int main()
 	PrintFio(my_FIO);
 
 	//Ввод полей структуры с помощью методов
-	printf("\n---method enter function---\n");
+	printf("\n--------method enter--------\n");
 	my_FIO.SetSurName(Familia);
 	my_FIO.SetName(Imya);
 	my_FIO.SetPatronymic(Otchestvo);
@@ -60,7 +60,7 @@ int main()
 	PrintStudent(my_student);
 
 	//Ввод полей структуры с помощью методов
-	printf("\n---method enter function---\n");
+	printf("\n--------method enter--------\n");
 	my_student.SetEduProg(EduProg);
 	my_student.SetGroup(Group);
 	my_student.SetFacultyName(FacultyName);
@@ -83,33 +83,34 @@ int main()
 	PrintTeacher(my_teacher);
 
 	//Ввод полей структуры с помощью методов
-	printf("\n---method enter function---\n");
+	printf("\n--------method enter--------\n");
 	my_teacher.SetDegree(Degree);
 	my_teacher.SetFacultyName(FacultyName);
 	PrintTeacher(my_teacher);
 
+	///faculty struct
+	printf("\n------faculty struct----------\n");
+	
+	//Создание новой структуры из готовых данных
+	printf("---initialization function---\n");
+	faculty my_faculty = CreateFaculty(FacultyName, 180, 145, 35, 40, 20, 5, 70);
+	PrintFaculty(my_faculty);
 
-	/*//faculty struct
-	printf("\n--------faculty struct------------\n");
-	printf("------separate filling------\n");
-	Faculty Fac;
+	//Ввод полей существующей структуры из консоли
+	printf("\n---console enter function---\n");
+	ConsoleInputFaculty(&my_faculty);
+	printf("\n");
+	PrintFaculty(my_faculty);
 
-	Fac.SetFacultyName(FacultyName);
-	Fac.SetQuantityOfStudents(500);
-	Fac.SetQuantityOfBachelors(450);
-	Fac.SetQuantityOfMasters(50);
+	//Ввод полей структуры с помощью методов
+	printf("\n--------method enter--------\n");
+	my_faculty.SetStudentsInfo(300, 270, 30);
+	my_faculty.SetTeachersInfo(40, 33, 7);
+	PrintFaculty(my_faculty);
 
-	Fac.SetQuantityOfTeachers(50);
-	Fac.SetQuantityOfCandidates(40);
-	Fac.SetQuantityOfDoctors(5);
-
-	Fac.SetQuantityOfDisciplines(40);
-
-	Fac.PrintFaculty();
-
-	printf("--------joint filling-------\n");
-	Fac.SetStudentsInfo(600, 550, 50);
-	Fac.SetTeachersInfo(60, 45, 7);
-	Fac.PrintFaculty();*/
+	//Методы обработки содержимого структуры
+	printf("\n----processing by methods----\n");
+	printf("Procent of masters on faculty: %0.2lf\n", my_faculty.ProcentOfMasters());
+	printf("Procent of doctors on faculty: %0.2lf\n", my_faculty.ProcentOfDoctors());
+	printf("Students to teachers quantity: %0.2lf\n", my_faculty.ProcOfStudToTeach());
 }
-

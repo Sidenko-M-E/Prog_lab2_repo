@@ -1,4 +1,4 @@
-struct Faculty 
+struct faculty 
 {
 	char FacultyName[30];//название факультета
 	int QuantityOfStudents;	 //кол-во студетов на факультете
@@ -11,18 +11,8 @@ struct Faculty
 	
 	int QuantityOfDisciplines;//кол-во преподаваемых дисциплин
 
-	//Методы установки...
-	void SetFacultyName(char buf[]);   //названия факультета
-
-	void SetQuantityOfStudents(int buf);  //кол-ва студетов на факультете
-	void SetQuantityOfBachelors(int buf); //кол-ва обучающихся на бакалавриате
-	void SetQuantityOfMasters(int buf);	  //кол-ва обучающихся в магистратуре
-
-	void SetQuantityOfTeachers(int buf);   //кол-ва преподавателей
-	void SetQuantityOfCandidates(int buf); //кол-ва кандидатов наук
-	void SetQuantityOfDoctors(int buf);	   //кол-ва докторов наук
-
-	void SetQuantityOfDisciplines(int buf); //кол-ва преподаваемых дисциплин
+	//Метод установки названия факультета
+	void SetFacultyName(char buf[]);
 
 	//Метод установки информации о студентах
 	void SetStudentsInfo(int all_quan, int bach_quan, int mast_quan);
@@ -30,6 +20,21 @@ struct Faculty
 	//Метод установки информации о преподавателях
 	void SetTeachersInfo(int all_quan, int cand_quan, int doct_quan);
 
-	//Метод распечатки структуры
-	void PrintFaculty();
+	//Метод подсчёта процентного кол-ва магистров среди учащихся
+	double ProcentOfMasters();
+
+	//Метод подсчёта процентного кол-ва докторов наук среди преподавателей
+	double ProcentOfDoctors();
+
+	//Метод подсчёта кол-ва студентов, приходящихся на одного преподавателя
+	double ProcOfStudToTeach();
 };
+
+//Функция инициализации структуры
+faculty CreateFaculty(char buf_FacultyName[], int stud_quan, int bach_quan, int mast_quan, int teac_quan, int cand_quan, int doct_quan, int disc_quan);
+
+//Функция вывода структуры в консоль
+void PrintFaculty(faculty buf_faculty);
+
+//Функция ввода полей структуры из консоли
+void ConsoleInputFaculty(faculty *buf_faculty);
