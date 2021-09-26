@@ -1,5 +1,5 @@
 ﻿#include "student.cpp"
-//#include "teacher.cpp"
+#include "teacher.cpp"
 //#include "faculty.cpp"
 
 int main()
@@ -11,7 +11,7 @@ int main()
 	char Otchestvo[] = "Evgen'evich";
 
 	//Создание новой структуры из готовых данных
-	printf("\n---initialization function---\n");
+	printf("---initialization function---\n");
 	FIO my_FIO = CreateFIO(Familia, Imya, Otchestvo);
 	PrintFio(my_FIO);
 
@@ -31,7 +31,7 @@ int main()
 	///human struct
 	printf("\n--------human struct--------\n");
 	//Создание новой структуры из готовых данных
-	printf("\n---initialization function---\n");
+	printf("---initialization function---\n");
 	human me = CreateHuman(1913, 19, 70, 182, 'M', my_FIO);
 	PrintHuman(me);
 
@@ -49,7 +49,7 @@ int main()
 	char FacultyName[] = "FoIT";
 	
 	//Создание новой структуры из готовых данных
-	printf("\n---initialization function---\n");
+	printf("---initialization function---\n");
 	student my_student = CreateStudent(me, 3, EduProg, Group, FacultyName);
 	PrintStudent(my_student);
 
@@ -64,23 +64,32 @@ int main()
 	my_student.SetEduProg(EduProg);
 	my_student.SetGroup(Group);
 	my_student.SetFacultyName(FacultyName);
-	PrintFio(my_FIO);
+	PrintStudent(my_student);
 
 
-	//teacher struct
+	///teacher struct
 	printf("\n--------teacher struct--------\n");
-	teacher Me3;
-	Me3.human = Me;
-	Me3.SetWorkExp(20);
 	char Degree[] = "Candidate of Mathematical Sciences";
-	Me3.SetDegree(Degree);
-	Me3.SetFacultyName(FacultyName);
-	Me3.PrintTeacher();
+
+	//Создание новой структуры из готовых данных
+	printf("---initialization function---\n");
+	teacher my_teacher = CreateTeacher(me, 40, Degree, FacultyName);
+	PrintTeacher(my_teacher);
+
+	//Ввод полей существующей структуры из консоли
+	printf("\n---console enter function---\n");
+	ConsoleInputTeacher(&my_teacher);
+	printf("\n");
+	PrintTeacher(my_teacher);
+
+	//Ввод полей структуры с помощью методов
+	printf("\n---method enter function---\n");
+	my_teacher.SetDegree(Degree);
+	my_teacher.SetFacultyName(FacultyName);
+	PrintTeacher(my_teacher);
 
 
-
-
-	//faculty struct
+	/*//faculty struct
 	printf("\n--------faculty struct------------\n");
 	printf("------separate filling------\n");
 	Faculty Fac;

@@ -33,7 +33,7 @@ student CreateStudent(human buf_human, int buf_course, char buf_EduProg[], char 
 	return new_student;
 }
 
-//Метод распечатки структуры
+//Функция вывода структуры в консоль
 void PrintStudent(student buf_student)
 {
 	PrintHuman(buf_student.thehuman);
