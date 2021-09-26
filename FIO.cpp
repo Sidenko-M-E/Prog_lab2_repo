@@ -46,11 +46,11 @@ void PrintFio(FIO buf_FIO)
 void ConsoleInputFIO(FIO *buf_FIO)
 {
 	printf("Enter surname:\n");
-	scanf("%s", (*buf_FIO).SurName);
+	scanf("%s", &(*buf_FIO).SurName);
 	printf("Enter name:\n");
-	scanf("%s", (*buf_FIO).Name);
+	scanf("%s", &(*buf_FIO).Name);
 	printf("Enter partonymic:\n");
-	scanf("%s", (*buf_FIO).Patronymic);
+	scanf("%s", &(*buf_FIO).Patronymic);
 }
 
 #endif FIO_CPP

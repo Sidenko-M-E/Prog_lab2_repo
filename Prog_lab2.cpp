@@ -1,12 +1,12 @@
 ﻿//#include "student.cpp"
 //#include "teacher.cpp"
 //#include "faculty.cpp"
-#include "FIO.cpp"
+#include "human.cpp"
 
 int main()
 {
-	//FIO struct
-	printf("\n--------FIO struct--------\n");
+	///FIO struct
+	printf("--------FIO struct--------\n");
 	char Familia[] = "Sidenko";
 	char Imya[] = "Matvey";
 	char Otchestvo[] = "Evgen'evich";
@@ -15,7 +15,7 @@ int main()
 	FIO my_FIO = CreateFIO(Familia, Imya, Otchestvo);
 	PrintFio(my_FIO);
 
-	//Ввода полей существующей структуры из консоли
+	//Ввод полей существующей структуры из консоли
 	ConsoleInputFIO(&my_FIO);
 	PrintFio(my_FIO);
 
@@ -25,22 +25,22 @@ int main()
 	my_FIO.SetPatronymic(Otchestvo);
 	PrintFio(my_FIO);
 
-	/*
-	//human struct
+	
+	///human struct
 	printf("\n--------human struct--------\n");
-	printf("------separate filling------\n");
-	human Me;
-	Me.SetId(1234);
-	Me.SetAge(19);
-	Me.SetWeight(70.6);
-	Me.SetHeight(182);
-	Me.SetGender('M');
-	Me.FIO = MyName;
-	Me.PrintHuman();
-	printf("--------joint filling-------\n");
-	Me.SetAllNumeric(1340, 20, 80, 192);
-	Me.PrintHuman();
+	//Создание новой структуры из готовых данных
+	printf("---initialization function---\n");
+	human me = CreateHuman(1913, 19, 70, 182, 'M', my_FIO);
+	PrintHuman(me);
 
+	//Ввод полей существующей структуры из консоли
+	printf("---console enter function---\n");
+	ConsoleInputHuman(&me);
+	printf("\n");
+	PrintHuman(me);
+	
+
+	/*
 	//student struct
 	printf("\n--------student struct--------\n");
 	student Me2;

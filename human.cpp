@@ -4,31 +4,45 @@
 #ifndef HUMAN_CPP
 #define HUMAN_CPP
 
-//Методы установки... 
-void human::SetId(int buf) { id = buf; }	//id
-void human::SetAge(int buf) { age = buf; }	//возраста
-void human::SetWeight(float buf) { weight = buf; }	//веса
-void human::SetHeight(float buf) { height = buf; }	//роста
-void human::SetGender(char buf) { gender = buf; }	//пола
-
-//Метод установки id, возраста, веса, роста
-void human::SetAllNumeric(int buf_id, int buf_age, float buf_weight, float buf_height)
+//Функция вывода структуры в консоль
+void PrintHuman(human buf_human) 
 {
-	id = buf_id;
-	age = buf_age;
-	weight = buf_weight;
-	height = buf_height;
+	printf("id: %d\n", buf_human.id);
+	printf("age: %d\n", buf_human.age);
+	printf("weight: %0.1f\n", buf_human.weight);
+	printf("height: %0.1f\n", buf_human.height);
+	printf("gender: %c\n", buf_human.gender);
+	PrintFio(buf_human.human_FIO);
 }
 
-//Метод распечатки структуры
-void human::PrintHuman()
+//Функция инициализации структуры
+human CreateHuman(int buf_id, int buf_age, float buf_weight, float buf_height, char buf_gender, FIO buf_FIO)
 {
-	printf("id: %d\n", id);
-	printf("age: %d\n", age);
-	printf("weight: %0.1f\n", weight);
-	printf("height: %0.1f\n", height);
-	printf("gender: %c\n", gender);
-	FIO.PrintFio();
+	human new_human;
+	new_human.id = buf_id;
+	new_human.age = buf_age;
+	new_human.weight = buf_weight;
+	new_human.height = buf_height;
+	new_human.gender = buf_gender;
+	new_human.human_FIO = buf_FIO;
+	return new_human;
+}
+
+//Функция ввода полей структуры из консоли
+void ConsoleInputHuman(human *buf_human) 
+{
+	printf("Enter id:\n");
+	scanf("%d", &(*buf_human).id);
+	printf("Enter age:\n");
+	scanf("%d", &(*buf_human).age);
+	printf("Enter weight:\n");
+	scanf("%f", &(*buf_human).weight);
+	printf("Enter height:\n");
+	scanf("%f", &(*buf_human).height);
+	printf("Enter gender:\n");
+	scanf("%s", &(*buf_human).gender);
+
+	ConsoleInputFIO(&(buf_human->human_FIO));
 }
 
 #endif HUMAN_CPP

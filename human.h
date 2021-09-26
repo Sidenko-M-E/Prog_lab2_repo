@@ -10,21 +10,16 @@ struct human {
 	float weight; //вес
 	float height; //рост
 	char gender;  //пол
-	FIO FIO;	  //подструктура ФИО
-
-	//Методы установки...
-	void SetId(int buf);	//id
-	void SetAge(int buf);	//возраста
-	void SetWeight(float buf);	//веса
-	void SetHeight(float buf);	//роста
-	void SetGender(char buf);	//пола
-
-	//Метод установки id, возраста, веса, роста
-	void SetAllNumeric(int buf_id, int buf_age, float buf_weight, float buf_height);
-
-	//Метод распечатки структуры
-	void PrintHuman();
+	FIO human_FIO;	  //подструктура ФИО
 };
 
-#endif HUMAN_H
+//Функция вывода структуры в консоль
+void PrintHuman(human buf_human);
 
+//Функция инициализации структуры
+human CreateHuman(int buf_id, int buf_age, float buf_weight, float buf_height, char buf_gender, FIO buf_FIO);
+
+//Функция ввода полей структуры из консоли
+void ConsoleInputHuman(human *buf_human);
+
+#endif HUMAN_H
