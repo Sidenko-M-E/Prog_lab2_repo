@@ -32,4 +32,3 @@ void human::PrintHuman()
 }
 
 #endif HUMAN_CPP
-
