@@ -1,21 +1,31 @@
-﻿#include "student.cpp"
-#include "teacher.cpp"
-#include "faculty.cpp"
+﻿//#include "student.cpp"
+//#include "teacher.cpp"
+//#include "faculty.cpp"
+#include "FIO.cpp"
 
 int main()
 {
 	//FIO struct
 	printf("\n--------FIO struct--------\n");
-	FIO MyName;
 	char Familia[] = "Sidenko";
 	char Imya[] = "Matvey";
 	char Otchestvo[] = "Evgen'evich";
 
-	MyName.SetSurName(Familia);
-	MyName.SetName(Imya);
-	MyName.SetPatronymic(Otchestvo);
-	MyName.PrintFio();
+	//Создание новой структуры из готовых данных
+	FIO my_FIO = CreateFIO(Familia, Imya, Otchestvo);
+	PrintFio(my_FIO);
 
+	//Ввода полей существующей структуры из консоли
+	ConsoleInputFIO(&my_FIO);
+	PrintFio(my_FIO);
+
+	//Ввод полей структуры с помощью методов
+	my_FIO.SetSurName(Familia);
+	my_FIO.SetName(Imya);
+	my_FIO.SetPatronymic(Otchestvo);
+	PrintFio(my_FIO);
+
+	/*
 	//human struct
 	printf("\n--------human struct--------\n");
 	printf("------separate filling------\n");
@@ -75,6 +85,6 @@ int main()
 	printf("--------joint filling-------\n");
 	Fac.SetStudentsInfo(600, 550, 50);
 	Fac.SetTeachersInfo(60, 45, 7);
-	Fac.PrintFaculty();
+	Fac.PrintFaculty();*/
 }
 

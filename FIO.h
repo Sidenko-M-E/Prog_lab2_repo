@@ -17,12 +17,12 @@ struct FIO {
 };
 
 //Функция инициализации структуры
-FIO CreateDate(char buf_surname[], char buf_name[], char buf_patronymic[]);
+FIO CreateFIO(char buf_surname[], char buf_name[], char buf_patronymic[]);
 
 //Функция вывода структуры в консоль
 void PrintFio(FIO buf_FIO);
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputFIO(FIO buf_FIO);
+void ConsoleInputFIO(FIO *buf_FIO);
 
 #endif FIO_H
