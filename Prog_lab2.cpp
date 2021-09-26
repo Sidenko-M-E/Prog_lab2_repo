@@ -1,7 +1,6 @@
-﻿//#include "student.cpp"
+﻿#include "student.cpp"
 //#include "teacher.cpp"
 //#include "faculty.cpp"
-#include "human.cpp"
 
 int main()
 {
@@ -12,14 +11,17 @@ int main()
 	char Otchestvo[] = "Evgen'evich";
 
 	//Создание новой структуры из готовых данных
+	printf("\n---initialization function---\n");
 	FIO my_FIO = CreateFIO(Familia, Imya, Otchestvo);
 	PrintFio(my_FIO);
 
 	//Ввод полей существующей структуры из консоли
+	printf("\n---console enter function---\n");
 	ConsoleInputFIO(&my_FIO);
 	PrintFio(my_FIO);
 
 	//Ввод полей структуры с помощью методов
+	printf("\n---method enter function---\n");
 	my_FIO.SetSurName(Familia);
 	my_FIO.SetName(Imya);
 	my_FIO.SetPatronymic(Otchestvo);
@@ -29,30 +31,41 @@ int main()
 	///human struct
 	printf("\n--------human struct--------\n");
 	//Создание новой структуры из готовых данных
-	printf("---initialization function---\n");
+	printf("\n---initialization function---\n");
 	human me = CreateHuman(1913, 19, 70, 182, 'M', my_FIO);
 	PrintHuman(me);
 
 	//Ввод полей существующей структуры из консоли
-	printf("---console enter function---\n");
+	printf("\n---console enter function---\n");
 	ConsoleInputHuman(&me);
 	printf("\n");
 	PrintHuman(me);
 	
 
-	/*
-	//student struct
+	///student struct
 	printf("\n--------student struct--------\n");
-	student Me2;
 	char EduProg[] = "Bachelor";
 	char Group[] = "PI-03";
 	char FacultyName[] = "FoIT";
-	Me2.human = Me;
-	Me2.SetCourse(3);
-	Me2.SetEduProg(EduProg);
-	Me2.SetGroup(Group);
-	Me2.SetFacultyName(FacultyName);
-	Me2.PrintStudent();
+	
+	//Создание новой структуры из готовых данных
+	printf("\n---initialization function---\n");
+	student my_student = CreateStudent(me, 3, EduProg, Group, FacultyName);
+	PrintStudent(my_student);
+
+	//Ввод полей существующей структуры из консоли
+	printf("\n---console enter function---\n");
+	ConsoleInputStudent(&my_student);
+	printf("\n");
+	PrintStudent(my_student);
+
+	//Ввод полей структуры с помощью методов
+	printf("\n---method enter function---\n");
+	my_student.SetEduProg(EduProg);
+	my_student.SetGroup(Group);
+	my_student.SetFacultyName(FacultyName);
+	PrintFio(my_FIO);
+
 
 	//teacher struct
 	printf("\n--------teacher struct--------\n");
@@ -63,6 +76,9 @@ int main()
 	Me3.SetDegree(Degree);
 	Me3.SetFacultyName(FacultyName);
 	Me3.PrintTeacher();
+
+
+
 
 	//faculty struct
 	printf("\n--------faculty struct------------\n");

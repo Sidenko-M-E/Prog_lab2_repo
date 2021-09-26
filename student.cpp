@@ -1,8 +1,5 @@
 #include "student.h"
 
-//Метод установки курса
-void student::SetCourse(int buf){course = buf;}
-
 //Метод установки учебной программы
 void student::SetEduProg(char buf[])
 {
@@ -24,12 +21,39 @@ void student::SetFacultyName(char buf[])
 		FacultyName[i] = buf[i];
 }
 
-//Метод распечатки структуры
-void student::PrintStudent()
+//Функция инициализации структуры
+student CreateStudent(human buf_human, int buf_course, char buf_EduProg[], char buf_Group[], char buf_FacultyName[])
 {
-	human.PrintHuman();
-	printf("course: %d\n", course);
-	printf("direction of preparation: %s\n", EduProg);
-	printf("group: %s\n", Group);
-	printf("faculty name: %s\n", FacultyName);
+	student new_student;
+	new_student.course = buf_course;
+	new_student.SetEduProg(buf_EduProg);
+	new_student.SetGroup(buf_Group);
+	new_student.SetFacultyName(buf_FacultyName);
+	new_student.thehuman = buf_human;
+	return new_student;
+}
+
+//Метод распечатки структуры
+void PrintStudent(student buf_student)
+{
+	PrintHuman(buf_student.thehuman);
+	printf("course: %d\n", buf_student.course);
+	printf("direction of preparation: %s\n", buf_student.EduProg);
+	printf("group: %s\n", buf_student.Group);
+	printf("faculty name: %s\n", buf_student.FacultyName);
+}
+
+//Функция ввода полей структуры из консоли
+void ConsoleInputStudent(student *buf_student)
+{
+	ConsoleInputHuman(&(buf_student->thehuman));
+
+	printf("Enter course:\n");
+	scanf("%d", &(*buf_student).course);
+	printf("Enter education programm:\n");
+	scanf("%s", &(*buf_student).EduProg);
+	printf("Enter group:\n");
+	scanf("%s", &(*buf_student).Group);
+	printf("Enter faculty name:\n");
+	scanf("%s", &(*buf_student).FacultyName);
 }
