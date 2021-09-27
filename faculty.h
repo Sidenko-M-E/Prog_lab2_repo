@@ -37,4 +37,4 @@ faculty CreateFaculty(char buf_FacultyName[], int stud_quan, int bach_quan, int 
 void PrintFaculty(faculty buf_faculty);
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputFaculty(faculty *buf_faculty);
+faculty ConsoleInputFaculty();

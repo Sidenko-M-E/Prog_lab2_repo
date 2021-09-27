@@ -35,14 +35,15 @@ void PrintTeacher(teacher buf_teacher)
 }
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputTeacher(teacher* buf_teacher)
+teacher ConsoleInputTeacher()
 {
-	ConsoleInputHuman(&(buf_teacher->thehuman));
+	teacher new_teacher;
+	new_teacher.thehuman = ConsoleInputHuman();
 
 	printf("Enter working experience:\n");
-	scanf("%d", &(*buf_teacher).WorkExp);
+	scanf("%d", &(new_teacher.WorkExp));
 	printf("Enter scientific degree:\n");
-	scanf("%s", &(*buf_teacher).Degree);
+	scanf("%s", &(new_teacher.Degree));
 	printf("Enter faculty name:\n");
-	scanf("%s", &(*buf_teacher).FacultyName);
+	scanf("%s", &(new_teacher.FacultyName));
 }

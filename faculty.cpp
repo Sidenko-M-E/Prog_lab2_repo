@@ -69,24 +69,26 @@ void PrintFaculty(faculty buf_faculty)
 }
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputFaculty(faculty* buf_faculty)
+faculty ConsoleInputFaculty()
 {
+	faculty new_faculty;
+
 	printf("Enter faculty name:\n");
-	scanf("%s", &(*buf_faculty).FacultyName);
+	scanf("%s", &(new_faculty.FacultyName));
 	printf("Enter quantity of students:\n");
-	scanf("%d", &(*buf_faculty).QuantityOfStudents);
+	scanf("%d", &(new_faculty.QuantityOfStudents));
 	printf("Enter quantity of bachelors:\n");
-	scanf("%d", &(*buf_faculty).QuantityOfBachelors);
+	scanf("%d", &(new_faculty.QuantityOfBachelors));
 	printf("Enter quantity of masters:\n");
-	scanf("%d", &(*buf_faculty).QuantityOfMasters);
+	scanf("%d", &(new_faculty.QuantityOfMasters));
 
 	printf("Enter quantity of teachers:\n");
-	scanf("%d", &(*buf_faculty).QuantityOfTeachers);
+	scanf("%d", &(new_faculty.QuantityOfTeachers));
 	printf("Enter quantity of candidates\n");
-	scanf("%d", &(*buf_faculty).QuantityOfCandidates);
+	scanf("%d", &(new_faculty.QuantityOfCandidates));
 	printf("Enter quantity of doctors:\n");
-	scanf("%d", &(*buf_faculty).QuantityOfDoctors);
+	scanf("%d", &(new_faculty.QuantityOfDoctors));
 
 	printf("Enter quantity of disciplines:\n");
-	scanf("%d", &(*buf_faculty).QuantityOfDisciplines);
+	scanf("%d", &(new_faculty.QuantityOfDisciplines));
 }

@@ -44,16 +44,17 @@ void PrintStudent(student buf_student)
 }
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputStudent(student *buf_student)
+student ConsoleInputStudent()
 {
-	ConsoleInputHuman(&(buf_student->thehuman));
+	student new_student;
+	new_student.thehuman = ConsoleInputHuman();
 
 	printf("Enter course:\n");
-	scanf("%d", &(*buf_student).course);
+	scanf("%d", &(new_student.course));
 	printf("Enter education programm:\n");
-	scanf("%s", &(*buf_student).EduProg);
+	scanf("%s", &(new_student.EduProg));
 	printf("Enter group:\n");
-	scanf("%s", &(*buf_student).Group);
+	scanf("%s", &(new_student.Group));
 	printf("Enter faculty name:\n");
-	scanf("%s", &(*buf_student).FacultyName);
+	scanf("%s", &(new_student.FacultyName));
 }

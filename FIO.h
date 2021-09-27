@@ -23,6 +23,6 @@ FIO CreateFIO(char buf_surname[], char buf_name[], char buf_patronymic[]);
 void PrintFio(FIO buf_FIO);
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputFIO(FIO *buf_FIO);
+FIO ConsoleInputFIO();
 
 #endif FIO_H

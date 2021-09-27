@@ -17,7 +17,7 @@ int main()
 
 	//Ввод полей существующей структуры из консоли
 	printf("\n---console enter function---\n");
-	ConsoleInputFIO(&my_FIO);
+	my_FIO = ConsoleInputFIO();
 	PrintFio(my_FIO);
 
 	//Ввод полей структуры с помощью методов
@@ -38,7 +38,7 @@ int main()
 
 	//Ввод полей существующей структуры из консоли
 	printf("\n---console enter function---\n");
-	ConsoleInputHuman(&me);
+	me = ConsoleInputHuman();
 	printf("\n");
 	PrintHuman(me);
 	
@@ -57,7 +57,7 @@ int main()
 
 	//Ввод полей существующей структуры из консоли
 	printf("\n---console enter function---\n");
-	ConsoleInputStudent(&my_student);
+	my_student = ConsoleInputStudent();
 	printf("\n");
 	PrintStudent(my_student);
 
@@ -81,7 +81,7 @@ int main()
 
 	//Ввод полей существующей структуры из консоли
 	printf("\n---console enter function---\n");
-	ConsoleInputTeacher(&my_teacher);
+	my_teacher = ConsoleInputTeacher();
 	printf("\n");
 	PrintTeacher(my_teacher);
 
@@ -103,7 +103,7 @@ int main()
 
 	//Ввод полей существующей структуры из консоли
 	printf("\n---console enter function---\n");
-	ConsoleInputFaculty(&my_faculty);
+	my_faculty = ConsoleInputFaculty();
 	printf("\n");
 	PrintFaculty(my_faculty);
 

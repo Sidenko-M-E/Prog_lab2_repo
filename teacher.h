@@ -18,4 +18,4 @@ teacher CreateTeacher(human buf_human, int buf_WorkExp, char buf_Degree[], char 
 void PrintStudent(student buf_teacher);
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputTeacher(teacher* buf_teacher);
+teacher ConsoleInputTeacher();

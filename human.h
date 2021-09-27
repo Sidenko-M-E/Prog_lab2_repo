@@ -20,6 +20,6 @@ void PrintHuman(human buf_human);
 human CreateHuman(int buf_id, int buf_age, float buf_weight, float buf_height, char buf_gender, FIO buf_FIO);
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputHuman(human *buf_human);
+human ConsoleInputHuman();
 
 #endif HUMAN_H

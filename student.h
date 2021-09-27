@@ -20,4 +20,4 @@ student CreateStudent(human buf_human, int buf_course, char buf_EduProg[], char 
 void PrintStudent(student buf_student);
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputStudent(student* buf_student);
+student ConsoleInputStudent();

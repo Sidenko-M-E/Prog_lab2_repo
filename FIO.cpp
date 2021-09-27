@@ -43,14 +43,15 @@ void PrintFio(FIO buf_FIO)
 }
 
 //Функция ввода полей структуры из консоли
-void ConsoleInputFIO(FIO *buf_FIO)
+FIO ConsoleInputFIO()
 {
+	FIO new_FIO;
 	printf("Enter surname:\n");
-	scanf("%s", &(*buf_FIO).SurName);
+	scanf("%s", &(new_FIO.SurName));
 	printf("Enter name:\n");
-	scanf("%s", &(*buf_FIO).Name);
+	scanf("%s", &(new_FIO.Name));
 	printf("Enter partonymic:\n");
-	scanf("%s", &(*buf_FIO).Patronymic);
+	scanf("%s", &(new_FIO.Patronymic));
 }
 
 #endif FIO_CPP
