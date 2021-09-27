@@ -1,4 +1,4 @@
-#include "human.cpp"
+#include "human.h"
 
 struct student {
 	human thehuman; //подструктура "human"

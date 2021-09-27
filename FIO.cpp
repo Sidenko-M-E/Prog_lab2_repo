@@ -1,5 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 #include "FIO.h"
-#include "stdio.h"
 
 //«ащита от переопределени€ методов структуры
 #ifndef FIO_CPP
@@ -52,6 +53,8 @@ FIO ConsoleInputFIO()
 	scanf("%s", &(new_FIO.Name));
 	printf("Enter partonymic:\n");
 	scanf("%s", &(new_FIO.Patronymic));
+
+	return(new_FIO);
 }
 
 #endif FIO_CPP

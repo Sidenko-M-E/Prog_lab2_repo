@@ -1,5 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 #include "faculty.h"
-#include "stdio.h"
 
 //Метод установки названия факультета
 void faculty::SetFacultyName(char buf[]) 
@@ -91,4 +92,6 @@ faculty ConsoleInputFaculty()
 
 	printf("Enter quantity of disciplines:\n");
 	scanf("%d", &(new_faculty.QuantityOfDisciplines));
+
+	return(new_faculty);
 }

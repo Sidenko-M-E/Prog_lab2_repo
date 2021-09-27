@@ -1,6 +1,8 @@
-﻿#include "student.cpp"
+﻿#include <stdio.h>
+#include "student.cpp"
 #include "teacher.cpp"
 #include "faculty.cpp"
+
 
 int main()
 {
@@ -28,7 +30,6 @@ int main()
 	PrintFio(my_FIO);
 
 
-	
 	///human struct
 	printf("\n--------human struct--------\n");
 	//Создание новой структуры из готовых данных

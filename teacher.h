@@ -1,4 +1,4 @@
-#include "human.cpp"
+#include "human.h"
 
 struct teacher {
 	human thehuman; //подструктура "human"
@@ -15,7 +15,20 @@ struct teacher {
 teacher CreateTeacher(human buf_human, int buf_WorkExp, char buf_Degree[], char buf_FacultyName[]);
 
 //Функция вывода структуры в консоль
-void PrintStudent(student buf_teacher);
+void PrintTeacher(teacher buf_teacher);
 
 //Функция ввода полей структуры из консоли
-teacher ConsoleInputTeacher();
+teacher ConsoleInputTeacher()
+{
+	teacher new_teacher;
+	new_teacher.thehuman = ConsoleInputHuman();
+
+	printf("Enter working experience:\n");
+	scanf("%d", &(new_teacher.WorkExp));
+	printf("Enter scientific degree:\n");
+	scanf("%s", &(new_teacher.Degree));
+	printf("Enter faculty name:\n");
+	scanf("%s", &(new_teacher.FacultyName));
+
+	return(new_teacher);
+}

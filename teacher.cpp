@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 #include "teacher.h"
 
 //Метод установки ученой степени
@@ -34,16 +36,3 @@ void PrintTeacher(teacher buf_teacher)
 	printf("faculty name: %s\n", buf_teacher.FacultyName);
 }
 
-//Функция ввода полей структуры из консоли
-teacher ConsoleInputTeacher()
-{
-	teacher new_teacher;
-	new_teacher.thehuman = ConsoleInputHuman();
-
-	printf("Enter working experience:\n");
-	scanf("%d", &(new_teacher.WorkExp));
-	printf("Enter scientific degree:\n");
-	scanf("%s", &(new_teacher.Degree));
-	printf("Enter faculty name:\n");
-	scanf("%s", &(new_teacher.FacultyName));
-}

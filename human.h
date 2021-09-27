@@ -1,4 +1,4 @@
-#include "FIO.cpp"
+#include "FIO.h"
 
 //Защита от переопределения структуры
 #ifndef HUMAN_H

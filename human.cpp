@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 #include "human.h"
 
 //«ащита от переопределени€ методов структуры
@@ -45,6 +47,8 @@ human ConsoleInputHuman()
 	scanf("%s", &(new_human.gender));
 
 	new_human.human_FIO = ConsoleInputFIO();
+
+	return(new_human);
 }
 
 #endif HUMAN_CPP

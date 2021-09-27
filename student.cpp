@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 #include "student.h"
 
 //Метод установки учебной программы
@@ -57,4 +59,6 @@ student ConsoleInputStudent()
 	scanf("%s", &(new_student.Group));
 	printf("Enter faculty name:\n");
 	scanf("%s", &(new_student.FacultyName));
+
+	return(new_student);
 }
