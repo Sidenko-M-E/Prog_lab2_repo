@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
-#include "student.cpp"
-#include "teacher.cpp"
-#include "faculty.cpp"
+#include "student.h"
+#include "teacher.h"
+#include "faculty.h"
 
 
 int main()
