@@ -1,4 +1,5 @@
 ﻿#include <stdio.h>
+#include <conio.h>
 #include "student.h"
 #include "teacher.h"
 #include "faculty.h"
@@ -23,7 +24,7 @@ int main()
 	PrintFio(my_FIO);
 
 	//Ввод полей структуры с помощью функций
-	printf("\n--------method enter--------\n");
+	printf("\n--------function enter--------\n");
 	SetSurName(&my_FIO, Familia);
 	SetName(&my_FIO, Imya);
 	SetPatronymic(&my_FIO, Otchestvo);
@@ -64,7 +65,7 @@ int main()
 	PrintStudent(my_student);
 
 	//Ввод полей структуры с помощью функций
-	printf("\n--------method enter--------\n");
+	printf("\n--------function enter--------\n");
 	SetEduProg(&my_student, EduProg);
 	SetGroup(&my_student, Group);
 	SetFacultyName(&my_student, FacultyName);
@@ -74,7 +75,7 @@ int main()
 
 	///teacher struct
 	printf("\n--------teacher struct--------\n");
-	char Degree[] = "Candidate of Mathematical Sciences";
+	char Degree[] = "Candidate_of_Mathematical_Sciences";
 
 	//Создание новой структуры из готовых данных
 	printf("---initialization function---\n");
@@ -88,7 +89,7 @@ int main()
 	PrintTeacher(my_teacher);
 
 	//Ввод полей структуры с помощью функций
-	printf("\n--------method enter--------\n");
+	printf("\n--------function enter--------\n");
 	SetDegree(&my_teacher, Degree);
 	SetFacultyName(&my_teacher, FacultyName);
 	PrintTeacher(my_teacher);
@@ -110,14 +111,15 @@ int main()
 	PrintFaculty(my_faculty);
 
 	//Ввод полей структуры с помощью функций
-	printf("\n--------method enter--------\n");
+	printf("\n--------function enter--------\n");
 	SetStudentsInfo(&my_faculty, 300, 270, 30);
 	SetTeachersInfo(&my_faculty, 40, 33, 7);
 	PrintFaculty(my_faculty);
 
 	//Функции обработки содержимого структуры
-	printf("\n----processing by methods----\n");
+	printf("\n----processing by functions----\n");
 	printf("Procent of masters on faculty: %0.2lf\n", ProcentOfMasters(my_faculty));
 	printf("Procent of doctors on faculty: %0.2lf\n", ProcentOfDoctors(my_faculty));
 	printf("Students to teachers quantity: %0.2lf\n", ProcOfStudToTeach(my_faculty));
+	_getch();
 }
