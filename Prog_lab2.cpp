@@ -17,17 +17,18 @@ int main()
 	FIO my_FIO = CreateFIO(Familia, Imya, Otchestvo);
 	PrintFio(my_FIO);
 
-	//Ввод полей существующей структуры из консоли
+	//Создание новой структуры из консоли
 	printf("\n---console enter function---\n");
-	my_FIO = ConsoleInputFIO();
+	my_FIO = ConsoleCreateFIO();
 	PrintFio(my_FIO);
 
-	//Ввод полей структуры с помощью методов
+	//Ввод полей структуры с помощью функций
 	printf("\n--------method enter--------\n");
-	my_FIO.SetSurName(Familia);
-	my_FIO.SetName(Imya);
-	my_FIO.SetPatronymic(Otchestvo);
+	SetSurName(&my_FIO, Familia);
+	SetName(&my_FIO, Imya);
+	SetPatronymic(&my_FIO, Otchestvo);
 	PrintFio(my_FIO);
+
 
 
 	///human struct
@@ -37,9 +38,9 @@ int main()
 	human me = CreateHuman(1913, 19, 70, 182, 'M', my_FIO);
 	PrintHuman(me);
 
-	//Ввод полей существующей структуры из консоли
+	//Создание новой структуры из консоли
 	printf("\n---console enter function---\n");
-	me = ConsoleInputHuman();
+	me = ConsoleCreateHuman();
 	printf("\n");
 	PrintHuman(me);
 	
@@ -56,17 +57,17 @@ int main()
 	student my_student = CreateStudent(me, 3, EduProg, Group, FacultyName);
 	PrintStudent(my_student);
 
-	//Ввод полей существующей структуры из консоли
+	//Создание новой структуры из консоли
 	printf("\n---console enter function---\n");
-	my_student = ConsoleInputStudent();
+	my_student = ConsoleCreateStudent();
 	printf("\n");
 	PrintStudent(my_student);
 
-	//Ввод полей структуры с помощью методов
+	//Ввод полей структуры с помощью функций
 	printf("\n--------method enter--------\n");
-	my_student.SetEduProg(EduProg);
-	my_student.SetGroup(Group);
-	my_student.SetFacultyName(FacultyName);
+	SetEduProg(&my_student, EduProg);
+	SetGroup(&my_student, Group);
+	SetFacultyName(&my_student, FacultyName);
 	PrintStudent(my_student);
 
 
@@ -80,16 +81,16 @@ int main()
 	teacher my_teacher = CreateTeacher(me, 40, Degree, FacultyName);
 	PrintTeacher(my_teacher);
 
-	//Ввод полей существующей структуры из консоли
+	//Создание новой структуры из консоли
 	printf("\n---console enter function---\n");
-	my_teacher = ConsoleInputTeacher();
+	my_teacher = ConsoleCreateTeacher();
 	printf("\n");
 	PrintTeacher(my_teacher);
 
-	//Ввод полей структуры с помощью методов
+	//Ввод полей структуры с помощью функций
 	printf("\n--------method enter--------\n");
-	my_teacher.SetDegree(Degree);
-	my_teacher.SetFacultyName(FacultyName);
+	SetDegree(&my_teacher, Degree);
+	SetFacultyName(&my_teacher, FacultyName);
 	PrintTeacher(my_teacher);
 
 
@@ -102,21 +103,21 @@ int main()
 	faculty my_faculty = CreateFaculty(FacultyName, 180, 145, 35, 40, 20, 5, 70);
 	PrintFaculty(my_faculty);
 
-	//Ввод полей существующей структуры из консоли
+	//Создание новой структуры из консоли
 	printf("\n---console enter function---\n");
-	my_faculty = ConsoleInputFaculty();
+	my_faculty = ConsoleCreateFaculty();
 	printf("\n");
 	PrintFaculty(my_faculty);
 
-	//Ввод полей структуры с помощью методов
+	//Ввод полей структуры с помощью функций
 	printf("\n--------method enter--------\n");
-	my_faculty.SetStudentsInfo(300, 270, 30);
-	my_faculty.SetTeachersInfo(40, 33, 7);
+	SetStudentsInfo(&my_faculty, 300, 270, 30);
+	SetTeachersInfo(&my_faculty, 40, 33, 7);
 	PrintFaculty(my_faculty);
 
-	//Методы обработки содержимого структуры
+	//Функции обработки содержимого структуры
 	printf("\n----processing by methods----\n");
-	printf("Procent of masters on faculty: %0.2lf\n", my_faculty.ProcentOfMasters());
-	printf("Procent of doctors on faculty: %0.2lf\n", my_faculty.ProcentOfDoctors());
-	printf("Students to teachers quantity: %0.2lf\n", my_faculty.ProcOfStudToTeach());
+	printf("Procent of masters on faculty: %0.2lf\n", ProcentOfMasters(my_faculty));
+	printf("Procent of doctors on faculty: %0.2lf\n", ProcentOfDoctors(my_faculty));
+	printf("Students to teachers quantity: %0.2lf\n", ProcOfStudToTeach(my_faculty));
 }

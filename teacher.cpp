@@ -2,18 +2,18 @@
 #include <stdio.h>
 #include "teacher.h"
 
-//Метод установки ученой степени
-void teacher::SetDegree(char buf[])
+//Функция установки ученой степени
+void SetDegree(teacher* edit_teacher, char new_degree[])
 {
 	for (int i = 0; i < 40; i++)
-		Degree[i] = buf[i];
+		edit_teacher->Degree[i] = new_degree[i];
 }
 
-//Метод установки факультета
-void teacher::SetFacultyName(char buf[])
+//Функция установки факультета
+void SetFacultyName(teacher* edit_teacher, char new_facultyname[])
 {
 	for (int i = 0; i < 30; i++)
-		FacultyName[i] = buf[i];
+		edit_teacher->FacultyName[i] = new_facultyname[i];
 }
 
 //Функция инициализации структуры
@@ -21,9 +21,10 @@ teacher CreateTeacher(human buf_human, int buf_WorkExp, char buf_Degree[], char 
 {
 	teacher new_teacher;
 	new_teacher.WorkExp = buf_WorkExp;
-	new_teacher.SetDegree(buf_Degree);
-	new_teacher.SetFacultyName(buf_FacultyName);
+	SetDegree(&new_teacher, buf_Degree);
+	SetFacultyName(&new_teacher, buf_FacultyName);
 	new_teacher.thehuman = buf_human;
+
 	return new_teacher;
 }
 
@@ -37,10 +38,10 @@ void PrintTeacher(teacher buf_teacher)
 }
 
 //Функция ввода полей структуры из консоли
-teacher ConsoleInputTeacher()
+teacher ConsoleCreateTeacher()
 {
 	teacher new_teacher;
-	new_teacher.thehuman = ConsoleInputHuman();
+	new_teacher.thehuman = ConsoleCreateHuman();
 
 	printf("Enter working experience:\n");
 	scanf("%d", &(new_teacher.WorkExp));

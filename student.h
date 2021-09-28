@@ -6,12 +6,16 @@ struct student {
 	char EduProg[FIO_fields_size / 3 * 2];//учебная программа
 	char Group[FIO_fields_size / 3];	  //название группы
 	char FacultyName[FIO_fields_size];	  //название факультета
-
-	//Методы установки...
-	void SetEduProg(char buf[]); //направления подгтовки
-	void SetGroup(char buf[]);	   //группы
-	void SetFacultyName(char buf[]);   //факультета
 };
+
+//Функция установки образовательной программы
+void SetEduProg(student* edit_student, char new_eduprog[]);
+
+//Функция установки группы
+void SetGroup(student* edit_student, char new_group[]);   
+
+//Функция установки факультета
+void SetFacultyName(student* edit_student, char new_facultyname[]);
 
 //Функция инициализации структуры
 student CreateStudent(human buf_human, int buf_course, char buf_EduProg[], char buf_Group[], char buf_FacultyName[]);
@@ -20,4 +24,4 @@ student CreateStudent(human buf_human, int buf_course, char buf_EduProg[], char 
 void PrintStudent(student buf_student);
 
 //Функция ввода полей структуры из консоли
-student ConsoleInputStudent();
+student ConsoleCreateStudent();

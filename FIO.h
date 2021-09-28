@@ -9,12 +9,16 @@ struct FIO {
 	char SurName[FIO_fields_size]; //Фамилия
 	char Name[FIO_fields_size]; //Имя
 	char Patronymic[FIO_fields_size]; //Отчество
-
-	//Методы установки...
-	void SetSurName(char buf[]);//фамилии
-	void SetName(char buf[]);	//имени
-	void SetPatronymic(char buf[]);//отчества
 };
+
+//Функция установки фамилии
+void SetSurName(FIO* edit_FIO, char new_surname[]);
+
+//Функция установки имени
+void SetName(FIO* edit_FIO, char new_name[]);
+
+//Функция установки отчества
+void SetPatronymic(FIO *edit_FIO , char new_patronymic[]);
 
 //Функция инициализации структуры
 FIO CreateFIO(char buf_surname[], char buf_name[], char buf_patronymic[]);
@@ -23,6 +27,6 @@ FIO CreateFIO(char buf_surname[], char buf_name[], char buf_patronymic[]);
 void PrintFio(FIO buf_FIO);
 
 //Функция ввода полей структуры из консоли
-FIO ConsoleInputFIO();
+FIO ConsoleCreateFIO();
 
 #endif FIO_H

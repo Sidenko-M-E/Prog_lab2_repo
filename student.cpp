@@ -2,25 +2,25 @@
 #include <stdio.h>
 #include "student.h"
 
-//Метод установки учебной программы
-void student::SetEduProg(char buf[])
+//Функция установки образовательной программы
+void SetEduProg(student* edit_student, char new_eduprog[])
 {
 	for (int i = 0; i < (FIO_fields_size / 3 * 2); i++)
-		EduProg[i] = buf[i];
+		edit_student->EduProg[i] = new_eduprog[i];
 }
 
-//Метод установки группы
-void student::SetGroup(char buf[])
+//Функция установки группы
+void SetGroup(student* edit_student, char new_group[])
 {
 	for (int i = 0; i < FIO_fields_size / 3; i++)
-		Group[i] = buf[i];
+		edit_student->Group[i] = new_group[i];
 }
 
-//Метод установки факультета
-void student::SetFacultyName(char buf[])
+//Функция установки факультета
+void SetFacultyName(student* edit_student, char new_facultyname[])
 {
 	for (int i = 0; i < FIO_fields_size; i++)
-		FacultyName[i] = buf[i];
+		edit_student->FacultyName[i] = new_facultyname[i];
 }
 
 //Функция инициализации структуры
@@ -28,10 +28,11 @@ student CreateStudent(human buf_human, int buf_course, char buf_EduProg[], char 
 {
 	student new_student;
 	new_student.course = buf_course;
-	new_student.SetEduProg(buf_EduProg);
-	new_student.SetGroup(buf_Group);
-	new_student.SetFacultyName(buf_FacultyName);
+	SetEduProg(&new_student, buf_EduProg);
+	SetGroup(&new_student, buf_Group);
+	SetFacultyName(&new_student, buf_FacultyName);
 	new_student.thehuman = buf_human;
+
 	return new_student;
 }
 
@@ -46,10 +47,10 @@ void PrintStudent(student buf_student)
 }
 
 //Функция ввода полей структуры из консоли
-student ConsoleInputStudent()
+student ConsoleCreateStudent()
 {
 	student new_student;
-	new_student.thehuman = ConsoleInputHuman();
+	new_student.thehuman = ConsoleCreateHuman();
 
 	printf("Enter course:\n");
 	scanf("%d", &(new_student.course));

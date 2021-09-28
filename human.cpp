@@ -27,11 +27,12 @@ human CreateHuman(int buf_id, int buf_age, float buf_weight, float buf_height, c
 	new_human.height = buf_height;
 	new_human.gender = buf_gender;
 	new_human.human_FIO = buf_FIO;
+
 	return new_human;
 }
 
 //Функция ввода полей структуры из консоли
-human ConsoleInputHuman() 
+human ConsoleCreateHuman()
 {
 	human new_human;
 
@@ -46,9 +47,9 @@ human ConsoleInputHuman()
 	printf("Enter gender:\n");
 	scanf("%s", &(new_human.gender));
 
-	new_human.human_FIO = ConsoleInputFIO();
+	new_human.human_FIO = ConsoleCreateFIO();
 
-	return(new_human);
+	return new_human;
 }
 
 #endif HUMAN_CPP

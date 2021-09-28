@@ -2,55 +2,56 @@
 #include <stdio.h>
 #include "faculty.h"
 
-//Метод установки названия факультета
-void faculty::SetFacultyName(char buf[]) 
+//Функция установки названия факультета
+void SetFacultyName(faculty* edit_faculty, char new_facultyname[])
 {
 	for (int i = 0; i < 30; i++)
-		FacultyName[i] = buf[i];
+		edit_faculty->FacultyName[i] = new_facultyname[i];
 }
 
-//Метод установки информации о студентах
-void faculty::SetStudentsInfo(int all_quan, int bach_quan, int mast_quan)
+//Функция установки информации о студентах
+void SetStudentsInfo(faculty* edit_faculty, int all_quan, int bach_quan, int mast_quan)
 {
-	QuantityOfStudents = all_quan;
-	QuantityOfBachelors = bach_quan;
-	QuantityOfMasters = mast_quan;
+	edit_faculty->QuantityOfStudents = all_quan;
+	edit_faculty->QuantityOfBachelors = bach_quan;
+	edit_faculty->QuantityOfMasters = mast_quan;
 }
 
-//Метод установки информации о преподавателях
-void faculty::SetTeachersInfo(int all_quan, int cand_quan, int doct_quan)
+//Функция установки информации о преподавателях
+void SetTeachersInfo(faculty* edit_faculty, int all_quan, int cand_quan, int doct_quan)
 {
-	QuantityOfTeachers = all_quan;
-	QuantityOfCandidates = cand_quan;
-	QuantityOfDoctors = doct_quan;
+	edit_faculty->QuantityOfTeachers = all_quan;
+	edit_faculty->QuantityOfCandidates = cand_quan;
+	edit_faculty->QuantityOfDoctors = doct_quan;
 }
 
-//Метод подсчёта процентного кол-ва магистров среди учащихся
-double faculty::ProcentOfMasters() 
+//Функция подсчёта процентного кол-ва магистров среди учащихся
+double ProcentOfMasters(faculty oper_faculty)
 {
-	return(((double)QuantityOfMasters) / ((double)QuantityOfStudents) * 100);
+	return(((double)oper_faculty.QuantityOfMasters) / ((double)oper_faculty.QuantityOfStudents) * 100);
 }
 
-//Метод подсчёта процентного кол-ва докторов наук среди преподавателей
-double faculty::ProcentOfDoctors()
+//Функция подсчёта процентного кол-ва докторов наук среди преподавателей
+double ProcentOfDoctors(faculty oper_faculty)
 {
-	return(((double)QuantityOfDoctors) / ((double)QuantityOfTeachers) * 100);
+	return(((double)oper_faculty.QuantityOfDoctors) / ((double)oper_faculty.QuantityOfTeachers) * 100);
 }
 
-//Метод подсчёта кол-ва студентов, приходящихся на одного преподавателя
-double faculty::ProcOfStudToTeach()
+//Функция подсчёта кол-ва студентов, приходящихся на одного преподавателя
+double ProcOfStudToTeach(faculty oper_faculty)
 {
-	return(((double)QuantityOfStudents) / ((double)QuantityOfTeachers));
+	return(((double)oper_faculty.QuantityOfStudents) / ((double)oper_faculty.QuantityOfTeachers));
 }
 
 //Функция инициализации структуры
 faculty CreateFaculty(char buf_FacultyName[], int stud_quan, int bach_quan, int mast_quan, int teach_quan, int cand_quan, int doct_quan, int disc_quan)
 {
 	faculty new_faculty;
-	new_faculty.SetFacultyName(buf_FacultyName);
-	new_faculty.SetStudentsInfo(stud_quan, bach_quan, mast_quan);
-	new_faculty.SetTeachersInfo(teach_quan, cand_quan, doct_quan);
+	SetFacultyName(&new_faculty, buf_FacultyName);
+	SetStudentsInfo(&new_faculty, stud_quan, bach_quan, mast_quan);
+	SetTeachersInfo(&new_faculty, teach_quan, cand_quan, doct_quan);
 	new_faculty.QuantityOfDisciplines = disc_quan;
+
 	return new_faculty;
 }
 
@@ -70,7 +71,7 @@ void PrintFaculty(faculty buf_faculty)
 }
 
 //Функция ввода полей структуры из консоли
-faculty ConsoleInputFaculty()
+faculty ConsoleCreateFaculty()
 {
 	faculty new_faculty;
 
